@@ -14,7 +14,10 @@
           :subname     db}
          (dissoc opts :db)))
 
-(defn- make-subname [host port db]
+(defn make-subname
+  "Make a subname for the given `host`, `port`, and `db` params."
+  {:arglists '([host port db]), :added "0.39.0"}
+  [host port db]
   (str "//" host ":" port "/" db))
 
 (defn postgres
